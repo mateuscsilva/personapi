@@ -1,4 +1,4 @@
-#API REST para gerenciamento de pessoas sendo desenvolvida durante o boocamp da Digitial Innnovation One
+# API REST para gerenciamento de pessoas sendo desenvolvida durante o boocamp da Digitial Innnovation One
 
 :computer:
 
@@ -14,7 +14,7 @@ API REST sendo desenvolvida com:
 - Heroku
 - Postman para teste de funcionalidades da API
 
-Para executar o projeto pelo terminal, digite
+### Para executar o projeto pelo terminal, digite
 
 ```shell script
 mvn spring-boot:run 
