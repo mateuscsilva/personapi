@@ -14,7 +14,7 @@ API REST sendo desenvolvida com:
 - Heroku
 - Postman para teste de funcionalidades da API
 
-Para executar o projeto pelo terminal, digite
+####Para executar o projeto pelo terminal, digite:
 
 ```shell script
 mvn spring-boot:run 
@@ -37,6 +37,6 @@ http://localhost:8080/api/v1/people
 - [x] Criar o repositório no Github
 - [x] Criar as entidades *Person* e *Phone*
 - [x] Criar o service *PersonService*
-- [ ] Criar os DTO's
-- [ ] Criar as Exceptions
-- [ ] Criar os Services
+- [x] Criar os DTO's
+- [x] Criar as Exceptions
+- [x] Criar os Services
