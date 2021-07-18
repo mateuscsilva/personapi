@@ -1,5 +1,6 @@
 package one.digitalinnovation.personapi.service;
 
+import one.digitalinnovation.personapi.dto.request.PersonDTO;
 import one.digitalinnovation.personapi.dto.response.MessageResponseDTO;
 import one.digitalinnovation.personapi.entity.Person;
 import one.digitalinnovation.personapi.repository.PersonRepository;
@@ -16,11 +17,13 @@ public class PersonService {
         this.personRepository = personRepository;
     }
 
-    public MessageResponseDTO createPerson(Person person){
-        Person savedPerson  = personRepository.save(person);
+    public MessageResponseDTO createPerson(PersonDTO personDTO){
+        Person personToSave = Person.builder().build();
+        //Person savedPerson  = personRepository.save(personDTO);
         return MessageResponseDTO
                 .builder()
-                .message("Created person with ID " + savedPerson.getId())
+                //.message("Created person with ID " + savedPerson.getId())
+                .message("Createde person with ID ")
                 .build();
     }
 }
