@@ -34,8 +34,9 @@ http://localhost:8080/api/v1/people
 - [x] Configurar a versão do Java e H2 em application.properties
 - [x] Criar o README.md
 - [x] Definir a organização inicial do projeto 
-- [ ] Criar o repositório no Github
-- [ ] Criar as entidades *Person* e *Phone*
+- [x] Criar o repositório no Github
+- [x] Criar as entidades *Person* e *Phone*
+- [x] Criar o service *PersonService*
 - [ ] Criar os DTO's
 - [ ] Criar as Exceptions
 - [ ] Criar os Services
