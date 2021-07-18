@@ -1,4 +1,4 @@
-#API REST para gerenciamento de pessoas sendo desenvolvida durante o boocamp da Digitial Innnovation One
+# API REST para gerenciamento de pessoas sendo desenvolvida durante o boocamp da Digitial Innnovation One
 
 :computer:
 
