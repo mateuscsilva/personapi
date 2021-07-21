@@ -5,14 +5,15 @@
 API REST sendo desenvolvida com:
 
 - Java 16
-- Maven 3.8.1  
+- Maven 3.8.1
+- Junit5  
 - IntelliJ IDEA Community Edition
 - Controle de versão com GIT
 - Armazenamento no Github   
 - Spring Boot
 - H2 database
-- Heroku
-- Postman para teste de funcionalidades da API
+- Heroku para deploy
+- Postman para simular a execução das funcionalidades da API
 
 ####Para executar o projeto pelo terminal, digite:
 
@@ -24,6 +25,12 @@ Após executar o comando acima, basta apenas abrir o seguinte endereço e visual
 
 ```
 http://localhost:8080/api/v1/people
+```
+
+####URI do deploy no heroku:
+
+```
+https://personapi-management.herokuapp.com/api/v1/people
 ```
 
 ### Tarefas já definidas:
@@ -40,3 +47,7 @@ http://localhost:8080/api/v1/people
 - [x] Criar os DTO's
 - [x] Criar as Exceptions
 - [x] Criar os Services
+- [x] Insere teste com Junit5 
+- [x] Deploy no Heroku 
+- [ ] Documentação para fazer chamadas da API no Heroku
+- [ ] Acrescentar
