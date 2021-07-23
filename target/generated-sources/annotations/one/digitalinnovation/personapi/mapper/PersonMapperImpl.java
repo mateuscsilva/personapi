@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.processing.Generated;
 import one.digitalinnovation.personapi.dto.request.PersonDTO;
+import one.digitalinnovation.personapi.entity.Address;
 import one.digitalinnovation.personapi.entity.Person;
-import one.digitalinnovation.personapi.entity.Person.PersonBuilder;
 import one.digitalinnovation.personapi.entity.Phone;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-07-18T11:08:22-0300",
+    date = "2021-07-23T18:06:26-0300",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 16 (Oracle Corporation)"
 )
 public class PersonMapperImpl implements PersonMapper {
@@ -23,21 +23,25 @@ public class PersonMapperImpl implements PersonMapper {
             return null;
         }
 
-        PersonBuilder person = Person.builder();
+        Person person = new Person();
 
         if ( personDTO.getBirthDate() != null ) {
-            person.birthDate( LocalDate.parse( personDTO.getBirthDate(), DateTimeFormatter.ofPattern( "dd-MM-yyyy" ) ) );
+            person.setBirthDate( LocalDate.parse( personDTO.getBirthDate(), DateTimeFormatter.ofPattern( "dd-MM-yyyy" ) ) );
         }
-        person.id( personDTO.getId() );
-        person.firstName( personDTO.getFirstName() );
-        person.lastName( personDTO.getLastName() );
-        person.cpf( personDTO.getCpf() );
+        person.setId( personDTO.getId() );
+        person.setFirstName( personDTO.getFirstName() );
+        person.setLastName( personDTO.getLastName() );
+        person.setCpf( personDTO.getCpf() );
         List<Phone> list = personDTO.getPhones();
         if ( list != null ) {
-            person.phones( new ArrayList<Phone>( list ) );
+            person.setPhones( new ArrayList<Phone>( list ) );
+        }
+        List<Address> list1 = personDTO.getAddresses();
+        if ( list1 != null ) {
+            person.setAddresses( new ArrayList<Address>( list1 ) );
         }
 
-        return person.build();
+        return person;
     }
 
     @Override
@@ -58,6 +62,10 @@ public class PersonMapperImpl implements PersonMapper {
         List<Phone> list = person.getPhones();
         if ( list != null ) {
             personDTO.setPhones( new ArrayList<Phone>( list ) );
+        }
+        List<Address> list1 = person.getAddresses();
+        if ( list1 != null ) {
+            personDTO.setAddresses( new ArrayList<Address>( list1 ) );
         }
 
         return personDTO;

@@ -42,7 +42,7 @@ https://personapi-management.herokuapp.com/api/v1/people
 - [x] Criar o README.md
 - [x] Definir a organização inicial do projeto 
 - [x] Criar o repositório no Github
-- [x] Criar as entidades *Person* e *Phone*
+- [x] Criar as entidades *Person*, *Phone* e *Address* 
 - [x] Criar o service *PersonService*
 - [x] Criar os DTO's
 - [x] Criar as Exceptions
@@ -50,4 +50,3 @@ https://personapi-management.herokuapp.com/api/v1/people
 - [x] Insere teste com Junit5 
 - [x] Deploy no Heroku 
 - [ ] Documentação para fazer chamadas da API no Heroku
-- [ ] Acrescentar
