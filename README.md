@@ -1,4 +1,4 @@
-# API REST para gerenciamento de pessoas sendo desenvolvida durante o boocamp da Digitial Innnovation One
+# API REST para Gerenciamento de Pessoas com pets com controle para doença
 
 :computer:
 
@@ -42,11 +42,12 @@ https://personapi-management.herokuapp.com/api/v1/people
 - [x] Criar o README.md
 - [x] Definir a organização inicial do projeto 
 - [x] Criar o repositório no Github
-- [x] Criar as entidades *Person*, *Phone* e *Address* 
-- [x] Criar o service *PersonService*
+- [x] Criar as entidades *Person*, *Phone*, *Address*, *Pet* e *Disease*
 - [x] Criar os DTO's
 - [x] Criar as Exceptions
 - [x] Criar os Services
 - [x] Insere teste com Junit5 
-- [x] Deploy no Heroku 
+- [x] Deploy no Heroku
+- [ ] Melhoria das classes relacionadas a doenças  
+- [ ] Acrescentar verificações da inserção de animais com doença  
 - [ ] Documentação para fazer chamadas da API no Heroku
