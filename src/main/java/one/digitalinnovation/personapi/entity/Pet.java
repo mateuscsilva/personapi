@@ -39,4 +39,7 @@ public class Pet {
     @Enumerated(EnumType.STRING)
     private SexType sexType;
 
+    @Column
+    private LocalDate birthDay;
+
 }

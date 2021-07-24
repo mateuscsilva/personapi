@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import one.digitalinnovation.personapi.entity.Address;
+import one.digitalinnovation.personapi.entity.Pet;
 import one.digitalinnovation.personapi.entity.Phone;
 import org.hibernate.validator.constraints.br.CPF;
 
@@ -43,5 +44,9 @@ public class PersonDTO {
     @NotEmpty
     @Valid
     private List<Address> addresses;
+
+    @NotEmpty
+    @Valid
+    private List<Pet> pets;
 
 }

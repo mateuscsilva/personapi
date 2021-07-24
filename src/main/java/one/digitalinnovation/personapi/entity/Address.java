@@ -33,6 +33,7 @@ public class Address {
     @Column(nullable = false)
     private int buildingNumber;
 
+    @Column(nullable = true)
     private int apartmentNumber;
 
 }

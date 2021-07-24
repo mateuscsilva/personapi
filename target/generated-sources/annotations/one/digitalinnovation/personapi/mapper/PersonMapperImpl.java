@@ -8,11 +8,12 @@ import javax.annotation.processing.Generated;
 import one.digitalinnovation.personapi.dto.request.PersonDTO;
 import one.digitalinnovation.personapi.entity.Address;
 import one.digitalinnovation.personapi.entity.Person;
+import one.digitalinnovation.personapi.entity.Pet;
 import one.digitalinnovation.personapi.entity.Phone;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-07-23T18:50:54-0300",
+    date = "2021-07-24T09:44:22-0300",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 16 (Oracle Corporation)"
 )
 public class PersonMapperImpl implements PersonMapper {
@@ -40,6 +41,10 @@ public class PersonMapperImpl implements PersonMapper {
         if ( list1 != null ) {
             person.setAddresses( new ArrayList<Address>( list1 ) );
         }
+        List<Pet> list2 = personDTO.getPets();
+        if ( list2 != null ) {
+            person.setPets( new ArrayList<Pet>( list2 ) );
+        }
 
         return person;
     }
@@ -66,6 +71,10 @@ public class PersonMapperImpl implements PersonMapper {
         List<Address> list1 = person.getAddresses();
         if ( list1 != null ) {
             personDTO.setAddresses( new ArrayList<Address>( list1 ) );
+        }
+        List<Pet> list2 = person.getPets();
+        if ( list2 != null ) {
+            personDTO.setPets( new ArrayList<Pet>( list2 ) );
         }
 
         return personDTO;

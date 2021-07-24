@@ -30,6 +30,7 @@ public class PetDTO {
     private String petName;
 
     @NotEmpty
+    @Size(min = 2, max = 50)
     private String breed;
 
     @NotEmpty
@@ -39,4 +40,7 @@ public class PetDTO {
     @NotEmpty
     @Enumerated(EnumType.STRING)
     private SexType sexType;
+
+    @NotEmpty
+    private LocalDate birthDay;
 }
