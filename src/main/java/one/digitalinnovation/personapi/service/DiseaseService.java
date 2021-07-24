@@ -7,6 +7,7 @@ import one.digitalinnovation.personapi.entity.Disease;
 import one.digitalinnovation.personapi.entity.Person;
 import one.digitalinnovation.personapi.exception.DiseaseNotFoundExcepetion;
 import one.digitalinnovation.personapi.exception.PersonNotFoundException;
+import one.digitalinnovation.personapi.exception.PetNotFoundException;
 import one.digitalinnovation.personapi.mapper.DiseaseMapper;
 import one.digitalinnovation.personapi.repository.DiseaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,8 @@ import java.util.stream.Collectors;
 public class DiseaseService {
 
     private DiseaseRepository diseaseRepository;
+
+    private PetService petService;
 
     private final DiseaseMapper diseaseMapper = DiseaseMapper.INSTANCE;
 
@@ -47,8 +50,9 @@ public class DiseaseService {
         diseaseRepository.deleteById(id);
     }
 
-    public MessageResponseDTO updateById(Long id, DiseaseDTO diseaseDTO) throws DiseaseNotFoundExcepetion {
+    public MessageResponseDTO updateById(Long id, DiseaseDTO diseaseDTO) throws DiseaseNotFoundExcepetion, PetNotFoundException {
         verifyIfExists(id);
+        petService.findById(id);
         Disease diseaseToUpdate = diseaseMapper.toModel(diseaseDTO);
         Disease updatedDisease = diseaseRepository.save(diseaseToUpdate);
 

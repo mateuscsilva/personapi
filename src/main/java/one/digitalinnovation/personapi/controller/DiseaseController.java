@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import one.digitalinnovation.personapi.dto.request.DiseaseDTO;
 import one.digitalinnovation.personapi.dto.response.MessageResponseDTO;
 import one.digitalinnovation.personapi.exception.DiseaseNotFoundExcepetion;
+import one.digitalinnovation.personapi.exception.PetNotFoundException;
 import one.digitalinnovation.personapi.service.DiseaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -41,7 +42,7 @@ public class DiseaseController {
 
     @PutMapping("/{id}")
     public MessageResponseDTO updateById(@PathVariable Long id, @RequestBody @Valid DiseaseDTO diseaseDTO)
-            throws DiseaseNotFoundExcepetion {
+            throws DiseaseNotFoundExcepetion, PetNotFoundException {
         return diseaseService.updateById(id, diseaseDTO);
     }
 }
