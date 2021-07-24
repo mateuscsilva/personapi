@@ -4,36 +4,42 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import one.digitalinnovation.personapi.enums.FurColor;
+import one.digitalinnovation.personapi.enums.SexType;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+
 
 @Entity
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Address {
+public class Pet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private String cep;
+    @Column(nullable = false, unique = true)
+    private String petIdentifier;
 
     @Column(nullable = false)
-    private String neighborhood;
+    private String petName;
 
     @Column(nullable = false)
-    private String street;
+    private String breed;
 
     @Column(nullable = false)
-    private String building;
+    @Enumerated(EnumType.STRING)
+    private FurColor furColor;
 
     @Column(nullable = false)
-    private int buildingNumber;
+    @Enumerated(EnumType.STRING)
+    private SexType sexType;
 
-    @Column(nullable = true)
-    private int apartmentNumber;
+    @Column
+    private LocalDate birthDay;
 
 }
