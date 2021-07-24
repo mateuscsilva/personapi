@@ -5,6 +5,7 @@ import one.digitalinnovation.personapi.dto.request.DiseaseDTO;
 import one.digitalinnovation.personapi.dto.response.MessageResponseDTO;
 import one.digitalinnovation.personapi.entity.Disease;
 import one.digitalinnovation.personapi.entity.Person;
+import one.digitalinnovation.personapi.entity.Pet;
 import one.digitalinnovation.personapi.exception.DiseaseNotFoundExcepetion;
 import one.digitalinnovation.personapi.exception.PersonNotFoundException;
 import one.digitalinnovation.personapi.exception.PetNotFoundException;
@@ -52,7 +53,12 @@ public class DiseaseService {
 
     public MessageResponseDTO updateById(Long id, DiseaseDTO diseaseDTO) throws DiseaseNotFoundExcepetion, PetNotFoundException {
         verifyIfExists(id);
-        petService.findById(id);
+
+        Disease disease = DiseaseMapper.INSTANCE.toModel(diseaseDTO);
+        for(Pet pet : disease.getPets()) {
+            petService.findById(pet.getId());
+        }
+
         Disease diseaseToUpdate = diseaseMapper.toModel(diseaseDTO);
         Disease updatedDisease = diseaseRepository.save(diseaseToUpdate);
 
