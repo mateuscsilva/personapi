@@ -18,33 +18,36 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 public class PersonServiceTest {
-
-    private PersonMapper personMapper = PersonMapper.INSTANCE;
-
-    @Mock
-    private PersonRepository personRepository;
-
-    @InjectMocks
-    private PersonService personService;
-
-    @Test
-    void testGivenPersonDTOThenReturnSavedMessage() {
-        PersonDTO expectedPersonDTO = PersonDTOBuilder.builder().build().toPersonDTO();
-        Person expectedSavedPerson = personMapper.toModel(expectedPersonDTO);
-
-        when(personRepository.save(any(Person.class))).thenReturn(expectedSavedPerson);
-
-        MessageResponseDTO expectedSuccessMessage = createExpectedMessageResponse(expectedSavedPerson.getId());
-        MessageResponseDTO successMessage = personService.createPerson(expectedPersonDTO);
-
-        assertEquals(expectedSuccessMessage, successMessage);
-    }
-
-    private MessageResponseDTO createExpectedMessageResponse(Long id) {
-        return MessageResponseDTO
-                .builder()
-                .message("Created person with ID " + id)
-                .build();
-    }
+//
+//    private PersonMapper personMapper = PersonMapper.INSTANCE;
+//
+//    @Mock
+//    private PersonRepository personRepository;
+//
+//    @InjectMocks
+//    private PersonService personService;
+//
+//    @Test
+//    void whenGivenPersonDTOThenReturnSavedMessage() {
+//        PersonDTO expectedPersonDTO = PersonDTOBuilder.builder().build().toPersonDTO();
+//        Person expectedSavedPerson = personMapper.toModel(expectedPersonDTO);
+//
+//        when(personRepository.save(any(Person.class))).thenReturn(expectedSavedPerson);
+//
+//        MessageResponseDTO expectedSuccessMessage = createExpectedMessageResponse(expectedSavedPerson.getId());
+//        MessageResponseDTO successMessage = personService.createPerson(expectedPersonDTO);
+//
+//        assertEquals(expectedSuccessMessage, successMessage);
+//    }
+//
+//
+//
+//
+//    private MessageResponseDTO createExpectedMessageResponse(Long id) {
+//        return MessageResponseDTO
+//                .builder()
+//                .message("Created person with ID " + id)
+//                .build();
+//    }
 
 }

@@ -24,31 +24,31 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class PetServiceTest {
 
-    private static final long INVALID_PET_ID = 2L;
-
-    @Mock
-    private PetRepository petRepository;
-
-    private PetMapper petMapper = PetMapper.INSTANCE;
-
-    @InjectMocks
-    private PetService petService;
-
-    @Test
-    void whenValidPetIdInformedThenReturnAPet() throws PetNotFoundException {
-        PetDTO validPetDTO = PetDTOBuilder.builder().build().toPetDTO();
-        Pet validPet = petMapper.toModel(validPetDTO);
-
-        when(petRepository.findById(validPetDTO.getId())).thenReturn(Optional.of(validPet));
-
-        Pet foundedPetDTO = petService.findById(validPetDTO.getId());
-        assertThat(foundedPetDTO, is(equalTo(validPet)));
-    }
-
-    @Test
-    void whenInvalidPetIdInformedThenReturnAPet() {
-        when(petRepository.findById(INVALID_PET_ID)).thenReturn(Optional.empty());
-
-        assertThrows(PetNotFoundException.class, () -> petService.findById(INVALID_PET_ID));
-    }
+//    private static final long INVALID_PET_ID = 2L;
+//
+//    @Mock
+//    private PetRepository petRepository;
+//
+//    private PetMapper petMapper = PetMapper.INSTANCE;
+//
+//    @InjectMocks
+//    private PetService petService;
+//
+//    @Test
+//    void whenValidPetIdInformedThenReturnAPet() throws PetNotFoundException {
+//        PetDTO validPetDTO = PetDTOBuilder.builder().build().toPetDTO();
+//        Pet validPet = petMapper.toModel(validPetDTO);
+//
+//        when(petRepository.findById(validPetDTO.getId())).thenReturn(Optional.of(validPet));
+//
+//        Pet foundedPetDTO = petService.findById(validPetDTO.getId());
+//        assertThat(foundedPetDTO, is(equalTo(validPet)));
+//    }
+//
+//    @Test
+//    void whenInvalidPetIdInformedThenReturnAPet() {
+//        when(petRepository.findById(INVALID_PET_ID)).thenReturn(Optional.empty());
+//
+//        assertThrows(PetNotFoundException.class, () -> petService.findById(INVALID_PET_ID));
+//    }
 }
